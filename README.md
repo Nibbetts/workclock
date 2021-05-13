@@ -4,7 +4,7 @@ A punch-in / punch-out terminal work clock system, for easy time recording, suit
 
 NOTES:
 - Does not run in the background between clocking in and out.
-- Creates a punches.txt file to store timecard information in
+- Creates a 'punches.txt' file to store timecard information in in
 the same directory as the script; this file must not move, or it
 will be recreated from scratch.
 - These commands assume your alias for 'workclock.py' is 'clock';

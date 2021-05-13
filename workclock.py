@@ -11,9 +11,9 @@
      NOTE: Does not run in the background between clocking in and out.
 
  USAGE:
-     NOTE: Creates a punches.txt file to store timecard information in the same
-     directory as the script; this file must not move, or it will be recreated
-     from scratch.
+     NOTE: Creates a 'punches.txt' file to store timecard information in in
+     the same directory as the script; this file must not move, or it will be
+     recreated from scratch.
  
      NOTE: These assume your alias for 'workclock.py' is 'clock'; if this is not
      the case, alter each command accordingly.
