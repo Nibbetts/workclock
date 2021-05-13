@@ -3,6 +3,7 @@
 A punch-in / punch-out terminal work clock system, for easy time recording, suited for separating time spent on different personal projects.
 
 NOTES:
+- Does not run in the background between clocking in and out.
 - Creates a punches.txt file to store timecard information in
 the same directory as the script; this file must not move, or it
 will be recreated from scratch.
@@ -19,8 +20,9 @@ as it is very particular.
 `workclock.py alias [alias_name] [bashrc_file]`
 
   A way of installing the program so that you have a convenient
-  alias for 'workclock.py'. NOTE that this does not remove previous
-  installations, so if you need to remove it or reinstall it,
+  alias for 'workclock.py'. This should not be done until this script
+  is where you want it to reside. NOTE that this does not remove
+  previous installations, so if you need to remove it or reinstall it,
   you'll have to edit the bashrc_file used yourself.
 
     alias_name

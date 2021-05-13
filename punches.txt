@@ -1,9 +1,0 @@
-WORK CLOCK PUNCHES, STARTED Wed May 12 17:12:21 2021
-Last Project: tulip
-Clocked In: NO
-Project | Total | Punches
-honk | 0:44:40 | Wed May 12 17:12:21 2021 -> Wed May 12 17:40:58 2021 | Wed May 12 17:41:09 2021 -> Wed May 12 17:41:16 2021 | Thu May 13 10:22:55 2021 -> Thu May 13 10:23:12 2021 | Thu May 13 10:58:38 2021 -> Thu May 13 11:14:17 2021
-doof | 22:13:31 | Wed May 12 12:04:00 2021 -> Thu May 13 10:17:17 2021 | Thu May 13 10:19:40 2021 -> Thu May 13 10:19:45 2021 | Thu May 13 10:22:50 2021 -> Thu May 13 10:22:55 2021 | Thu May 13 10:23:12 2021 -> Thu May 13 10:23:16 2021
-beef | 0:30:44 | Thu May 13 10:23:16 2021 -> Thu May 13 10:54:00 2021
-moose | 0:1:52 | Thu May 13 10:54:04 2021 -> Thu May 13 10:55:56 2021
-tulip | 0:2:47 | Thu May 13 10:55:56 2021 -> Thu May 13 10:57:51 2021 | Thu May 13 10:57:52 2021 -> Thu May 13 10:58:38 2021 | Thu May 13 11:14:30 2021 -> Thu May 13 11:14:36 2021

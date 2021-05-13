@@ -8,6 +8,8 @@
      For easy clock-in clock-out like time recording behavior, suited for
      separating time spent on different projects.
  
+     NOTE: Does not run in the background between clocking in and out.
+
  USAGE:
      NOTE: Creates a punches.txt file to store timecard information in the same
      directory as the script; this file must not move, or it will be recreated
@@ -24,8 +26,9 @@
  
      workclock.py alias [alias_name] [bashrc_file]
          A way of installing the program so that you have a convenient
-         alias for 'workclock.py'. NOTE that this does not remove previous
-         installations, so if you need to remove it or reinstall it,
+         alias for 'workclock.py'. This should not be done until this script
+         is where you want it to reside. NOTE that this does not remove
+         previous installations, so if you need to remove it or reinstall it,
          you'll have to edit the bashrc_file used yourself.
          
          alias_name
@@ -414,16 +417,24 @@ def fnum(sec):
 if __name__ == "__main__":
     # A terminal command to clock in on a new or different-than-last
     #   project might look like: 'clock in DatabaseProj'
+    new = not exists(PUNCHES_PATH)
 
     try:
         # Prep the first additional argument
         if len(argv) > 1:
             arg1 = argv[1].lower()
 
+            # If no punches.txt file yet, deny certain commands that need
+            #   a previously defined project to exist. You can still get an error
+            #   if you create a file yourself that is in the wrong format though,
+            #   or is missing a last/current project.
+            if new and arg1 in ["change", "list", "project", "out"]:
+                print(f"Cannot execute '{arg1}'; no punches yet.")
+
             # Command to set up the 'clock' or other aliases;
             #   this would have to look like 'python3 workclock.py alias'.
             #   This must be done after you've got this script where it will reside.
-            if arg1 == "alias":
+            elif arg1 == "alias":
                 alias(*argv[2:])
 
             # Command to change projects, whether clocked in or out
@@ -458,6 +469,8 @@ if __name__ == "__main__":
                 print(__doc__)
         
         # No additional argument means it's just a status check
+        elif new:
+            print("No punches yet, no status to check.")
         else:
             check_time()
 
