@@ -3,15 +3,16 @@
 A punch-in / punch-out terminal work clock system, for easy time recording, suited for separating time spent on different personal projects.
 
 NOTES:
-    * Creates a punches.txt file to store timecard information in
-    the same directory as the script; this file must not move, or it
-    will be recreated from scratch.
-    * These commands assume your alias for 'workclock.py' is 'clock';
-    if this is not the case, alter each command accordingly.
-    * Project names are not case sensitive.
-    * No method is provided for deleting old projects, or for other
-    more complex edits, but it is fairly easy to edit the punches.txt
-    file itself.
+- Creates a punches.txt file to store timecard information in
+the same directory as the script; this file must not move, or it
+will be recreated from scratch.
+- These commands assume your alias for 'workclock.py' is 'clock';
+if this is not the case, alter each command accordingly.
+- Project names are not case sensitive.
+- No method is provided for deleting old projects, or for other
+more complex edits, but it is fairly easy to edit the punches.txt
+file itself. Be careful not to corrupt the formatting, though,
+as it is very particular.
 
 ## Terminal Commands
 
