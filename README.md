@@ -1,17 +1,26 @@
 # workclock
-A punch-in / punch-out terminal work clock system, for easy time recording, suited for separating time on different personal projects.
 
-    NOTE: These commands assume your alias for 'workclock.py' is 'clock'; if this is not
-    the case, alter each command accordingly.
+A punch-in / punch-out terminal work clock system, for easy time recording, suited for separating time spent on different personal projects.
 
-    NOTE: Project names are not case sensitive.
+NOTES:
+    * Creates a punches.txt file to store timecard information in
+    the same directory as the script; this file must not move, or it
+    will be recreated from scratch.
+    * These commands assume your alias for 'workclock.py' is 'clock';
+    if this is not the case, alter each command accordingly.
+    * Project names are not case sensitive.
+    * No method is provided for deleting old projects, or for other
+    more complex edits, but it is fairly easy to edit the punches.txt
+    file itself.
 
 ## Terminal Commands
 
 `workclock.py alias [alias_name] [bashrc_file]`
 
   A way of installing the program so that you have a convenient
-  alias for 'workclock.py'.
+  alias for 'workclock.py'. NOTE that this does not remove previous
+  installations, so if you need to remove it or reinstall it,
+  you'll have to edit the bashrc_file used yourself.
 
     alias_name
         May be used to specify something other than 'clock' as the
@@ -27,6 +36,10 @@ A punch-in / punch-out terminal work clock system, for easy time recording, suit
   Print a status update, indicating the current/last project, whether
   or not you are clocked in and when, current time, total project
   hours including current punch, and current punch duration.
+
+`clock help`
+
+  Print this documentation.
 
 `clock in [project_name] [hour_of_in:minute_of_in]`
 
