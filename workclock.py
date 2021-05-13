@@ -78,7 +78,7 @@
          Example: 'clock out 13:05' for retroactively clocking out of the
          current project at 1:05 PM.
  
-     clock change project_name
+     clock switch project_name
          If clocked in, clocks out of the current project, and into
          project_name. If not clocked in, simply changes the current/last
          project to project_name. Both situations give a report; the former is
@@ -265,7 +265,7 @@ def clock_out(previous_time=None):
     print(f"'{project}' Total Hrs: {fnum(total)}, Current Punch: {fnum(punch)}")
 
 
-def change_project(project):
+def switch_project(project):
     """ Changes current project, punching in and out if necessary."""
     # Get the data
     project = project.lower()
@@ -437,9 +437,9 @@ if __name__ == "__main__":
             elif arg1 == "alias":
                 alias(*argv[2:])
 
-            # Command to change projects, whether clocked in or out
-            elif arg1 == "change":
-                change_project(argv[2])
+            # Command to switch projects, whether clocked in or out
+            elif arg1 == "switch":
+                switch_project(argv[2])
                 
             # Command to list all projects and their total hours
             elif arg1 == "list":
@@ -467,6 +467,10 @@ if __name__ == "__main__":
             # Command to print documentation
             elif arg1 == "help":
                 print(__doc__)
+
+            else:
+                print(f'Unknown clock command "{arg1}". Valid commands are:')
+                print('["", "help", "alias", "in", "out", "switch", "list", "project"]')
         
         # No additional argument means it's just a status check
         elif new:

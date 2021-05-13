@@ -76,7 +76,7 @@ as it is very particular.
     Example: 'clock out 13:05' for retroactively clocking out of the
     current project at 1:05 PM.
 
-`clock change project_name`
+`clock switch project_name`
 
   If clocked in, clocks out of the current project, and into
   project_name. If not clocked in, simply changes the current/last
