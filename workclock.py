@@ -220,6 +220,8 @@ def clock_in(project=None, previous_time=None):
         f.write('\n'.join(lines))
 
     # Report
+    if new:
+        print(f"Created Project: '{project}'")
     print(f"CLOCK IN, Project: '{project}'")
     print(f"IN: {in_time}")
     print(f"'{project}' Total Hrs: {fnum(total)}")
@@ -306,6 +308,8 @@ def switch_project(project):
         f.write('\n'.join(lines))
 
     # Report
+    if new2:
+        print(f"Created Project: '{project}'")
     if finished:
         print(f"CURRENTLY CLOCKED OUT, Project Switched From: '{last_project}', To: '{project}'")
         print(f"NOW: {now}")
@@ -351,7 +355,7 @@ def report_project(project=None):
     else: project = project.lower()
     current = project == current_project
     line_finished = finished if current else True
-    line, _, last, _, times = parse_line(lines, project, line_finished)
+    line, _, last, new, times = parse_line(lines, project, line_finished)
     now = datetime.now()
 
     # Calculations and format conversions
@@ -363,6 +367,8 @@ def report_project(project=None):
     now = now.strftime(TIMEF)
 
     # Report
+    if new:
+        print(f"Created Project: '{project}'")
     addon = "" if line_finished else f", Current Punch: {fnum(delta)}"
     print(f"PROJECT REPORT FOR: '{project}'")
     print(f"""Is Current: {YES if current else NO}, Clocked In: {YES if not line_finished else NO if finished else "'" + current_project + "'"}""")
