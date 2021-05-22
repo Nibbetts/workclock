@@ -234,14 +234,13 @@ def clock_out(previous_time=None):
         print('ALREAD CLOCKED OUT; Correct missed clock-in first by clocking in with added argument for (24-hr formatted) time of day, "hour:minute"')
         return
     line, index, last, _, times = parse_line(lines, project, finished)
+    out = datetime.now()
     if previous_time:
         h, m = previous_time.split(':')
-        out = datetime(previous_time.year, previous_time.month, previous_time.day, int(h), int(m))
+        out = datetime(out.year, out.month, out.day, int(h), int(m))
         if out <= last:
             print("Invalid time, less than clock-in time. If clock out was after midnight, correct by punching out at midnight, then making an extra punch in before punching out.")
             return
-    else:
-        out = datetime.now()
 
     # Calculations and format conversions
     punch = out - last
